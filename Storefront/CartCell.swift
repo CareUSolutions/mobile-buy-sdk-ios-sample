@@ -57,7 +57,8 @@ class CartCell: UITableViewCell, ViewModelConfigurable {
         self.priceLabel.text    = viewModel.price
         self.quantityLabel.text = viewModel.quantityDescription
         self.stepper.value      = Double(viewModel.quantity)
-        
+        self.stepper.autorepeat = true
+        self.stepper.minimumValue = 0
         self.thumbnailView.setImageFrom(viewModel.imageURL)
     }
 }
