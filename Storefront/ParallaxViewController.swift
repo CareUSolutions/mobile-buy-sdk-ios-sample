@@ -148,7 +148,7 @@ class ParallaxViewController: UIViewController {
          ** content size.
          */
         let contentSize = self.scrollView.contentSize
-        self.scrollView.contentSize  = .zero
+        
         
         var insets                   = self.scrollView.contentInset
         insets.top                   = self.midY

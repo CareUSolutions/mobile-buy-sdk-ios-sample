@@ -39,7 +39,6 @@ class CartCell: UITableViewCell, ViewModelConfigurable {
 
     @IBOutlet private weak var thumbnailView: UIImageView!
     @IBOutlet private weak var titleLabel:    UILabel!
-    @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var priceLabel:    UILabel!
     @IBOutlet private weak var quantityLabel: UILabel!
     @IBOutlet private weak var stepper:       UIStepper!
@@ -53,7 +52,6 @@ class CartCell: UITableViewCell, ViewModelConfigurable {
         self.viewModel = viewModel
         
         self.titleLabel.text    = viewModel.title
-        self.subtitleLabel.text = viewModel.subtitle
         self.priceLabel.text    = viewModel.price
         self.quantityLabel.text = viewModel.quantityDescription
         self.stepper.value      = Double(viewModel.quantity)
