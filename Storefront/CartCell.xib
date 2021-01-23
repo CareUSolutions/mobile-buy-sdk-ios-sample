@@ -9,11 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="118" id="KGk-i7-Jjw" customClass="CartCell" customModule="Storefront" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="457" height="118"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="130" id="KGk-i7-Jjw" customClass="CartCell" customModule="Storefront" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="457" height="130"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="457" height="118"/>
+                <rect key="frame" x="0.0" y="0.0" width="457" height="130"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Product title that is really long" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24T-hG-0td">
@@ -36,7 +36,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity: 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtQ-C7-pA9">
-                        <rect key="frame" x="82" y="74" width="69" height="17"/>
+                        <rect key="frame" x="82" y="86" width="69" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="69" id="rAH-0u-ho5"/>
                         </constraints>
@@ -45,16 +45,19 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" autorepeat="NO" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="eXf-X9-AdF">
-                        <rect key="frame" x="351" y="74" width="94" height="32"/>
+                        <rect key="frame" x="351" y="86" width="94" height="32"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
                             <action selector="stepperAction:" destination="KGk-i7-Jjw" eventType="valueChanged" id="tgU-b4-qvn"/>
                         </connections>
                     </stepper>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xly-zP-nNM">
-                        <rect key="frame" x="171" y="72" width="166" height="34"/>
+                        <rect key="frame" x="171" y="72" width="166" height="46"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        <connections>
+                            <action selector="inputChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="3bP-t4-qhP"/>
+                        </connections>
                     </textField>
                 </subviews>
                 <constraints>
@@ -76,13 +79,14 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="inputField" destination="Xly-zP-nNM" id="QiY-na-9gb"/>
                 <outlet property="priceLabel" destination="WNg-Pm-U8b" id="3FL-gg-d2J"/>
                 <outlet property="quantityLabel" destination="EtQ-C7-pA9" id="hzW-Pr-vX9"/>
                 <outlet property="stepper" destination="eXf-X9-AdF" id="tk4-Md-cVf"/>
                 <outlet property="thumbnailView" destination="g9b-hd-XrG" id="S4L-yO-1Tz"/>
                 <outlet property="titleLabel" destination="24T-hG-0td" id="WAr-h5-F08"/>
             </connections>
-            <point key="canvasLocation" x="-200.80000000000001" y="90.854572713643179"/>
+            <point key="canvasLocation" x="-530.39999999999998" y="181.70914542728636"/>
         </tableViewCell>
     </objects>
 </document>

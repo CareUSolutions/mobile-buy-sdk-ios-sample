@@ -37,6 +37,7 @@ final class CartItemViewModel: ViewModel {
     let price:    String
     let quantity: Int
     
+    
     var quantityDescription: String {
         return "Quantity: \(model.quantity)"
     }

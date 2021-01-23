@@ -31,7 +31,7 @@ protocol CartCellDelegate: class {
     func cartCell(_ cell: CartCell, didUpdateQuantity quantity: Int)
 }
 
-class CartCell: UITableViewCell, ViewModelConfigurable {
+class CartCell: UITableViewCell, ViewModelConfigurable, UITextFieldDelegate {
     
     typealias ViewModelType = CartItemViewModel
     
@@ -42,6 +42,9 @@ class CartCell: UITableViewCell, ViewModelConfigurable {
     @IBOutlet private weak var priceLabel:    UILabel!
     @IBOutlet private weak var quantityLabel: UILabel!
     @IBOutlet private weak var stepper:       UIStepper!
+    @IBOutlet weak var inputField: UITextField!
+    
+    
     
     var viewModel: ViewModelType?
     
@@ -58,6 +61,9 @@ class CartCell: UITableViewCell, ViewModelConfigurable {
         self.stepper.autorepeat = true
         self.stepper.minimumValue = 0
         self.thumbnailView.setImageFrom(viewModel.imageURL)
+        self.inputField.text = String(Double(viewModel.quantity))
+        
+        inputField.delegate = self;
     }
 }
 
@@ -69,4 +75,13 @@ extension CartCell {
     @IBAction func stepperAction(_ sender: UIStepper) {
         self.delegate?.cartCell(self, didUpdateQuantity: Int(sender.value))
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+    @IBAction func inputChanged(_ sender: UITextField) {
+        
+    }
+    
 }
