@@ -90,6 +90,7 @@ extension CartCell {
         self.textField = inputField.text!
         let numberField = Int(textField) ?? 0
         self.delegate?.cartCell(self, didUpdateQuantity: Int(numberField))
+        sender.resignFirstResponder()
     }
 
     
