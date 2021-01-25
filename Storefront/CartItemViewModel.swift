@@ -39,7 +39,7 @@ final class CartItemViewModel: ViewModel {
     
     
     var quantityDescription: String {
-        return "Quantity: \(model.quantity)"
+        return "Quantity:"
     }
     
     // ----------------------------------

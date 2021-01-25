@@ -46,7 +46,9 @@ class CartCell: UITableViewCell, ViewModelConfigurable, UITextFieldDelegate {
     
     
     
+    
     var viewModel: ViewModelType?
+    var textField = ""
     
     // ----------------------------------
     //  MARK: - Configure -
@@ -60,11 +62,19 @@ class CartCell: UITableViewCell, ViewModelConfigurable, UITextFieldDelegate {
         self.stepper.value      = Double(viewModel.quantity)
         self.stepper.autorepeat = true
         self.stepper.minimumValue = 0
+        self.stepper.maximumValue = 1000
         self.thumbnailView.setImageFrom(viewModel.imageURL)
-        self.inputField.text = String(Double(viewModel.quantity))
+        self.inputField.text = String(Int(viewModel.quantity))
         
         inputField.delegate = self;
     }
+    
+    
+    
+    
+    
+    
+    
 }
 
 // ----------------------------------
@@ -76,12 +86,11 @@ extension CartCell {
         self.delegate?.cartCell(self, didUpdateQuantity: Int(sender.value))
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
-    
     @IBAction func inputChanged(_ sender: UITextField) {
-        
+        self.textField = inputField.text!
+        let numberField = Int(textField) ?? 0
+        self.delegate?.cartCell(self, didUpdateQuantity: Int(numberField))
     }
+
     
 }
