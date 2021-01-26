@@ -67,9 +67,15 @@ class CartCell: UITableViewCell, ViewModelConfigurable, UITextFieldDelegate {
         self.inputField.text = String(Int(viewModel.quantity))
         
         inputField.delegate = self;
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+                self.addGestureRecognizer(tap)
     }
     
     
+    @IBAction func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        self.inputField.endEditing(true)
+    }
+
     
     
     
