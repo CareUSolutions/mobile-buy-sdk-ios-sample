@@ -869,11 +869,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = com.careusolutions.iosapp;
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = .com.careu;
->>>>>>> b11192f380e7e26bd51c703d2dd2875cb2bd2753
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -894,11 +890,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = com.careusolutions.iosapp;
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = .com.careu;
->>>>>>> b11192f380e7e26bd51c703d2dd2875cb2bd2753
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
