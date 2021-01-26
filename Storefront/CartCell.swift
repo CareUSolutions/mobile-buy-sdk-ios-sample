@@ -44,12 +44,9 @@ class CartCell: UITableViewCell, ViewModelConfigurable, UITextFieldDelegate {
     @IBOutlet private weak var stepper:       UIStepper!
     @IBOutlet weak var inputField: UITextField!
     
-   
-
-    @IBAction func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-        self.inputField.endEditing(true)
-    }
-
+    
+    
+    
     var viewModel: ViewModelType?
     var textField = ""
     
@@ -70,8 +67,6 @@ class CartCell: UITableViewCell, ViewModelConfigurable, UITextFieldDelegate {
         self.inputField.text = String(Int(viewModel.quantity))
         
         inputField.delegate = self;
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-        self.addGestureRecognizer(tap)
     }
     
     
