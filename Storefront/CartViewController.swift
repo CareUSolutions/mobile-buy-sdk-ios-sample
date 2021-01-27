@@ -36,6 +36,8 @@ class CartViewController: ParallaxViewController {
     
     fileprivate var paySession: PaySession?
     
+     var useDiscount: Bool = false
+    
     // ----------------------------------
     //  MARK: - Segue -
     //
@@ -221,67 +223,72 @@ extension CartViewController: TotalsControllerDelegate {
              ** discount in the graphql.myshopify.com
              ** store (the test shop).
              */
-            self.promptForCodes { (discountCode, giftCard) in
-                var updatedCheckout = checkout
-                
-                let queue     = DispatchQueue.global(qos: .userInitiated)
-                let group     = DispatchGroup()
-                let semaphore = DispatchSemaphore(value: 1)
-                
-                if let discountCode = discountCode {
-                    group.enter()
-                    queue.async {
-                        semaphore.wait()
-                        
-                        print("Applying discount code: \(discountCode)")
-                        Client.shared.applyDiscount(discountCode, to: checkout.id) { checkout in
-                            if let checkout = checkout {
-                                updatedCheckout = checkout
-                            } else {
-                                print("Failed to apply discount to checkout")
+            if (self.useDiscount == false) {
+                completeCreateCheckout(checkout)
+            } else {
+                self.promptForCodes { (discountCode, giftCard) in
+                    var updatedCheckout = checkout
+                    
+                    let queue     = DispatchQueue.global(qos: .userInitiated)
+                    let group     = DispatchGroup()
+                    let semaphore = DispatchSemaphore(value: 1)
+                    
+                    if let discountCode = discountCode {
+                        group.enter()
+                        queue.async {
+                            semaphore.wait()
+                            
+                            print("Applying discount code: \(discountCode)")
+                            Client.shared.applyDiscount(discountCode, to: checkout.id) { checkout in
+                                if let checkout = checkout {
+                                    updatedCheckout = checkout
+                                } else {
+                                    print("Failed to apply discount to checkout")
+                                }
+                                semaphore.signal()
+                                group.leave()
                             }
-                            semaphore.signal()
-                            group.leave()
                         }
                     }
-                }
-                
-                if let giftCard = giftCard {
-                    group.enter()
-                    queue.async {
-                        semaphore.wait()
-                        
-                        print("Applying gift card: \(giftCard)")
-                        Client.shared.applyGiftCard(giftCard, to: checkout.id) { checkout in
-                            if let checkout = checkout {
-                                updatedCheckout = checkout
-                            } else {
-                                print("Failed to apply gift card to checkout")
+                    
+                    if let giftCard = giftCard {
+                        group.enter()
+                        queue.async {
+                            semaphore.wait()
+                            
+                            print("Applying gift card: \(giftCard)")
+                            Client.shared.applyGiftCard(giftCard, to: checkout.id) { checkout in
+                                if let checkout = checkout {
+                                    updatedCheckout = checkout
+                                } else {
+                                    print("Failed to apply gift card to checkout")
+                                }
+                                semaphore.signal()
+                                group.leave()
                             }
-                            semaphore.signal()
-                            group.leave()
                         }
                     }
-                }
-                
-                group.notify(queue: .main) {
-                    if let accessToken = AccountController.shared.accessToken {
-                        
-                        print("Associating checkout with customer: \(accessToken)")
-                        Client.shared.updateCheckout(updatedCheckout.id, associatingCustomer: accessToken) { associatedCheckout in
-                            if let associatedCheckout = associatedCheckout {
-                                completeCreateCheckout(associatedCheckout)
-                            } else {
-                                print("Failed to associate checkout with customer.")
-                                completeCreateCheckout(updatedCheckout)
+                    
+                    group.notify(queue: .main) {
+                        if let accessToken = AccountController.shared.accessToken {
+                            
+                            print("Associating checkout with customer: \(accessToken)")
+                            Client.shared.updateCheckout(updatedCheckout.id, associatingCustomer: accessToken) { associatedCheckout in
+                                if let associatedCheckout = associatedCheckout {
+                                    completeCreateCheckout(associatedCheckout)
+                                } else {
+                                    print("Failed to associate checkout with customer.")
+                                    completeCreateCheckout(updatedCheckout)
+                                }
                             }
+                            
+                        } else {
+                            completeCreateCheckout(updatedCheckout)
                         }
-                        
-                    } else {
-                        completeCreateCheckout(updatedCheckout)
                     }
                 }
             }
+            
         }
     }
 }
