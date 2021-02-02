@@ -65,6 +65,8 @@ class CartViewController: ParallaxViewController {
         self.updateSubtotal()
         
         self.registerNotifications()
+        
+        self.hideKeyboardWhenTappedAround()
     }
     
     deinit {
