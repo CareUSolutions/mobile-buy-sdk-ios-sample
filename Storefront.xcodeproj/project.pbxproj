@@ -96,6 +96,7 @@
 		9AFA3B7D1E6DB7110056C5AA /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA3B7C1E6DB7110056C5AA /* ProductsViewController.swift */; };
 		9AFA3B7F1E6DC5FD0056C5AA /* Storyboard+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA3B7E1E6DC5FD0056C5AA /* Storyboard+ViewController.swift */; };
 		9AFA3B871E6DFF530056C5AA /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA3B861E6DFF530056C5AA /* SelectableCell.swift */; };
+		CA78044E25CB3CDA0073C5DF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA78044D25CB3CDA0073C5DF /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -202,6 +203,7 @@
 		9AFA3B7C1E6DB7110056C5AA /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		9AFA3B7E1E6DC5FD0056C5AA /* Storyboard+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+ViewController.swift"; sourceTree = "<group>"; };
 		9AFA3B861E6DFF530056C5AA /* SelectableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
+		CA78044D25CB3CDA0073C5DF /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,6 +441,7 @@
 				9ABEB3F121260C3900A373F2 /* LoginViewController.swift */,
 				9A4EDDE121270E660071BA56 /* CustomerViewController.swift */,
 				9A4EDDEA212AE8C80071BA56 /* ProfileViewController.swift */,
+				CA78044D25CB3CDA0073C5DF /* SignupViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				9AB421AB1E93C781005098C4 /* PaymentViewModel.swift in Sources */,
 				9AEF61CC1E606EFE0067FA90 /* Fragment+ProductConnectionQuery.swift in Sources */,
 				9A4069D61E8EEDC9000254CD /* ShippingRateViewModel.swift in Sources */,
+				CA78044E25CB3CDA0073C5DF /* SignupViewController.swift in Sources */,
 				9A4EDDEB212AE8C80071BA56 /* ProfileViewController.swift in Sources */,
 				9A9FFF411E8171E900F6DFF7 /* SeparatorView.swift in Sources */,
 				9AC583CF1E81BF96005DB319 /* CartCell.swift in Sources */,
@@ -859,13 +863,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3TLGQLF8L6;
+				DEVELOPMENT_TEAM = JBGB3BKP4K;
 				INFOPLIST_FILE = Storefront/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = .com.careusolutions.iosapp;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.careusolutions.careu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -880,13 +884,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3TLGQLF8L6;
+				DEVELOPMENT_TEAM = JBGB3BKP4K;
 				INFOPLIST_FILE = Storefront/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = .com.careusolutions.iosapp;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.careusolutions.careu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
