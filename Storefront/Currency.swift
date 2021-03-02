@@ -31,6 +31,8 @@ struct Currency {
     private static let formatter: NumberFormatter = {
         let formatter         = NumberFormatter()
         formatter.numberStyle = .currency
+        formatter.currencyCode = "USD"
+        formatter.currencySymbol = "$"
         return formatter
     }()
     
