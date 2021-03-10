@@ -581,7 +581,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 1200;
-				ORGANIZATIONNAME = "Shopify Inc.";
+				ORGANIZATIONNAME = "Care U Products Inc.";
 				TargetAttributes = {
 					9ADAD4661E563091008AC561 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -860,18 +860,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Storefront/Storefront.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JBGB3BKP4K;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Care U Products Inc. (9UGXZ4AMZJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9UGXZ4AMZJ;
 				INFOPLIST_FILE = Storefront/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = .com.careusolutions.careu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.careusolutions.careuios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = careuios;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -881,18 +881,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Storefront/Storefront.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JBGB3BKP4K;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Care U Products Inc. (9UGXZ4AMZJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9UGXZ4AMZJ;
 				INFOPLIST_FILE = Storefront/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = .com.careusolutions.careu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.careusolutions.careuios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = careuios;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
