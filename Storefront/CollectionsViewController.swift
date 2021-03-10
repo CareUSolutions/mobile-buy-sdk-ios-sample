@@ -38,7 +38,8 @@ class CollectionsViewController: UIViewController {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let image = UIImage(named: "logo")
+        navigationItem.titleView = UIImageView(image: image)
         self.configureTableView()
         self.fetchCollections()
     }
